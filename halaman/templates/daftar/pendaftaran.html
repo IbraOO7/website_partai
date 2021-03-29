@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section id="register" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-user-plus"></i> Pendaftaran Anggota</h4>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'tambahdaftar' %}" method="POST" enctype="multipart/form-data" id="Daftar">
+                  {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Nama</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" name="nama" required>
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">No.KTP</label>
+                        <input type="text" class="form-control" id="lastName" name="noktp" placeholder="No.KTP" required>
+                        <div class="invalid-feedback">
+                          Valid last name is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Email</label>
+                        <input type="email" class="form-control" id="firstName" name="email" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">No.Telepon</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" name="telepon" required>
+                        <div class="invalid-feedback">
+                          Valid last name is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Tempat Lahir</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" name="tempat_lahir" required>
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="lastName" placeholder="" name="tanggal_lahir" required>
+                        <div class="invalid-feedback">
+                          Valid last name is required.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 mb-3">
+                        <label for="country">Golongan Darah</label>
+                        <select class="custom-select d-block w-100" name="goldarah" required>
+                          <option value="A">A</option>
+                          <option value="AB">AB</option>
+                          <option value="B">B</option>
+                          <option value="O">O</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid country.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">Jenis Kelamin</label>
+                        <select class="custom-select d-block w-100" name="jeniskelamin" required>
+                          <option value="Laki-laki">Laki-laki</option>
+                          <option value="Perempuan">Perempuan</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">Provinsi</label>
+                        <input type="text" class="form-control" name="provinsi" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="zip">Kabupaten / Kota</label>
+                        <input type="text" class="form-control" name="kabupaten" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div> <div class="col-md-4 mb-3">
+                        <label for="zip">Kecamatan</label>
+                        <input type="text" class="form-control" name="kecamatan" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="zip">Kelurahan</label>
+                        <input type="text" class="form-control" name="kelurahan" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">Domisili</label>
+                        <input type="text" class="form-control" name="domisili" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">Alamat KTP</label>
+                        <input type="text" class="form-control" name="alamat_ktp" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">RT</label>
+                        <input type="text" class="form-control" name="rt" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">RW</label>
+                        <input type="text" class="form-control" name="rw" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">Agama</label>
+                        <select class="custom-select d-block w-100" name="agama" required>
+                          <option value="Laki-laki">Islam</option>
+                          <option value="Perempuan">Kristen</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">Status Nikah</label>
+                        <select class="custom-select d-block w-100" name="status_nikah" required>
+                          <option value="Lajang">Lajang</option>
+                          <option value="Sudah Menikah">Sudah Menikah</option>
+                          <option value="Bercerai">Bercerai</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">Profesi</label>
+                        <select class="custom-select d-block w-100" name="profesi" required>
+                          <option value="PNS">PNS</option>
+                          <option value="Pedagang">Pedagang</option>
+                          <option value="Pengusaha">Pengusaha</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">Pendidikan</label>
+                        <select class="custom-select d-block w-100" name="pendidikan" required>
+                          <option value="SMA/SLTA">SMA/SLTA</option>
+                          <option value="D3">D3</option>
+                          <option value="S1">S1</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="formFileSm" class="form-label">Pas Foto</label>
+                        <input class="form-control form-control-sm" name="foto1" id="formFileSm" type="file">
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="formFileSm" class="form-label">Foto KTP</label>
+                        <input class="form-control form-control-sm" name="foto2" id="formFileSm" type="file">
+                      </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Persyaratan</h4>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="same-address" name="kesediaan" value="Ya">
+                      <label class="custom-control-label" for="same-address">Saya setuju menjadi anggota PPRI dengan syarat & ketentuan yang berlaku</label>
+                    </div>
+                    <hr class="mb-4">
+                <button type="submit"  class="btn btn-secondary btn-block" id="Submite">Daftar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block javascript %}
+<script>
+  $(document).ready(function() {
+    $("#Submite").on("click", function(e) {
+      e.preventDefault();
+      jQuery.noConflict();
+      var form_upload = $("#Daftar")[0];
+      var form_data = new FormData(form_upload);
+      $.ajax({
+        type: "POST",
+        url: "{% url 'tambahdaftar' %}",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function() {
+          alert("Data berhasil di submit");
+          location.reload();
+        },
+        error: function() {
+          alert("Data belum berhasil di submit");
+        }
+      })
+    })
+  });
+</script>
+{% endblock javascript %}
